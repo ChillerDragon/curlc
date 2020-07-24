@@ -6,8 +6,13 @@ import sys
 
 def main():
     if len(sys.argv) < 2:
-        print("usage: curlc [url] <curl args...>")
+        print("usage: curlc [browser] [url] <curl args...>")
         sys.exit(1)
+
+    browser = "chrome"
+    if sys.argv[1] == "chromium":
+        browser = "chromium"
+        sys.argv.remove(browser)
 
     curlargs = sys.argv[1:]
     for arg in curlargs:
@@ -15,7 +20,7 @@ def main():
             url = arg
             break
 
-    chrome = chrome_cookies(url)
+    chrome = chrome_cookies(url, browser = browser)
 
     cargs = []
     carg = "cookie: "
