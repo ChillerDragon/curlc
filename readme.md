@@ -12,3 +12,4 @@
 ## Example Usage
 
     $ curlc -L 'http://dropbox.com/secret-file'
+    $ curlc chromium -L 'http://dropbox.com/secret-file'
